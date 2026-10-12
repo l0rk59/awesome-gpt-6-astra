@@ -1,0 +1,81 @@
+name: "提交游戏 / Submit a game"
+description: "推荐一个用 GPT-6 Astra 制作的游戏 / Recommend a game made with GPT-6 Astra."
+title: "[Game] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        欢迎！中文或英文填写均可。可玩的原型也欢迎；请注明原作者。
+        Welcome! Chinese or English is fine. Playable prototypes are welcome; credit the original creator.
+  - type: input
+    id: game_name
+    attributes:
+      label: "游戏名称 / Game title"
+    validations:
+      required: true
+  - type: input
+    id: creator
+    attributes:
+      label: "作者 / Creator"
+      description: "作者或团队的名称与公开主页链接 / Name and public profile or website."
+    validations:
+      required: true
+  - type: input
+    id: access
+    attributes:
+      label: "在线游戏直达入口 / Direct browser game link"
+      description: "链接须直接进入可玩的在线游戏，无需下载、安装、本地搭建或登录；源码请放在更多资料中。 / Link directly to a playable browser game without downloads, installation, local setup or sign-in; put source links under More resources."
+      placeholder: "https://…"
+    validations:
+      required: true
+  - type: textarea
+    id: gameplay
+    attributes:
+      label: "有什么好玩 / What makes it interesting?"
+      description: "用一两句话说明核心玩法与亮点 / Describe the core mechanic and appeal in a sentence or two."
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: "实机截图 / Gameplay screenshots"
+      description: |
+        至少提供一张当前版本的真实运行截图，并注明拍摄版本或日期。拖拽上传图片，或粘贴公开、免登录的 HTTPS 原图 Markdown；支持 PNG、JPEG、WebP，单张小于 4 MB。
+        Add at least one screenshot of the current playable version and note its capture version or date. Drag an image here or embed a public HTTPS image URL using Markdown. Use PNG, JPEG, or WebP, under 4 MB each.
+      placeholder: |
+        ![游戏运行画面 / Game in action](https://example.com/gameplay.png)
+        拍摄版本或日期 / Capture version or date:
+    validations:
+      required: true
+  - type: dropdown
+    id: genre
+    attributes:
+      label: "建议分类 / Suggested genre"
+      options:
+        - "动作与街机 / Action & arcade"
+        - "解谜与益智 / Puzzles & brain games"
+        - "策略与模拟 / Strategy & simulation"
+        - "RPG 与冒险 / RPGs & adventures"
+        - "平台跳跃与竞速 / Platformers & racing"
+        - "实验玩法与多人游戏 / Experimental & multiplayer"
+    validations:
+      required: true
+  - type: textarea
+    id: astra_role
+    attributes:
+      label: "GPT-6 Astra 参与了什么 / How was GPT-6 Astra used?"
+      description: "提供作者说明、开发日志或公开记录的链接，并概述模型的作用。如果你是作者，也可以直接在这里说明。 / Link a creator statement, devlog, or public record and summarize the model's role. If you are the creator, you can describe it here directly."
+    validations:
+      required: true
+  - type: input
+    id: platform_requirements
+    attributes:
+      label: "平台与访问条件 / Platform and access requirements"
+      description: "例如：桌面或手机浏览器，无需登录；注明键盘、触屏及 WebGL 要求。 / For example: desktop or mobile browser, no sign-in; disclose keyboard, touch and WebGL requirements."
+    validations:
+      required: true
+  - type: textarea
+    id: resources
+    attributes:
+      label: "更多资料（可选） / More resources (optional)"
+      description: "源码、技术栈、开发过程，或其他有用信息 / Source, technology, making-of notes, or other useful context."
